@@ -36,10 +36,15 @@
       <button class="button button-block button-positive" ng-click="leerCodigo()">Scan</button>
     </div>
     <div class="item" ng-controller="panelCtrl">
-    <form>
-      <input type="text" ng-model="culito.name" placeholder="name">
-      <button class="button button-block button-positive"  ng-click="sayHello(culito.name)">Saludar</button>
-    </form>
+      <form>
+        <input type="text" ng-model="user.username" placeholder="username">
+        <input type="password" ng-model="user.password" placeholder="password">
+        <button class="button button-block button-positive"  ng-click="logIn(user.username, user.password)">Saludar</button>
+      </form>
+      <div ng-show="isLogged()">
+      <blockquote>Usted Ha iniciado sesion correctamente</blockquote>
+        
+      </div>
       
     </div>
     </ion-content>
