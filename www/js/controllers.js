@@ -22,6 +22,9 @@ angular.module('reader.controllers', ['ionic', 'ngCordova'])
             username: 'stalbeal',
             password: 'saba10'
 
+        }, {
+        	username:'invitado',
+        	password:'invitado'
         }];
         $scope.log = false;
 

@@ -30,24 +30,22 @@
       <br>
       <img src="img/ionic.png" alt="">
       <h2>Lector Qr</h2>
-      <p>Escaneee</p>
-    </div>
-    <div class="item"  ng-controller="readerCtrl">
-      <button class="button button-block button-positive" ng-click="leerCodigo()">Scan</button>
     </div>
     <div class="item" ng-controller="panelCtrl">
-      <form>
+      <form ng-show="!isLogged()">
         <input type="text" ng-model="user.username" placeholder="username">
         <input type="password" ng-model="user.password" placeholder="password">
         <button class="button button-block button-positive"  ng-click="logIn(user.username, user.password)">Saludar</button>
       </form>
       <div ng-show="isLogged()">
-      <blockquote>Usted Ha iniciado sesion correctamente</blockquote>
-        
+      <blockquote>Usted Ha iniciado sesion correctamente <br> Ahora puede Leer Codigos QR</blockquote>
+      <div class="item"  ng-controller="readerCtrl">
+        <button class="button button-block button-positive" ng-click="leerCodigo()">Scan</button>
       </div>
-      
     </div>
-    </ion-content>
-    </ion-pane>
-  </body>
+    
+  </div>
+  </ion-content>
+  </ion-pane>
+</body>
 </html>
