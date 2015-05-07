@@ -13,4 +13,9 @@ angular.module('reader.controllers', ['ionic','ngCordova'])
 			alert('Error : ' +err);
 		});
 	}
+}).controller('panelCtrl', function ($scope) {
+	$scope.sayHello= function  (name) {
+		// body...
+		alert('Hola ' + name);
+	}
 });

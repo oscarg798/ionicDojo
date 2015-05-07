@@ -23,7 +23,7 @@
     <div class="bar bar-header">
       <h1 class="title">Lector QR</h1>
     </div>
-    <ion-content style="text-align: center" ng-controller="readerCtrl">
+    <ion-content style="text-align: center">
     <div class="item">
       <br>
       <br>
@@ -32,8 +32,15 @@
       <h2>Lector Qr</h2>
       <p>Escaneee</p>
     </div>
-    <div class="item">
+    <div class="item"  ng-controller="readerCtrl">
       <button class="button button-block button-positive" ng-click="leerCodigo()">Scan</button>
+    </div>
+    <div class="item" ng-controller="panelCtrl">
+    <form>
+      <input type="text" ng-model="culito.name" placeholder="name">
+      <button class="button button-block button-positive"  ng-click="sayHello(culito.name)">Saludar</button>
+    </form>
+      
     </div>
     </ion-content>
     </ion-pane>
