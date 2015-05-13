@@ -18,6 +18,7 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
   </head>
+  <!--Declaramos el nombre del modulo de la Aplicacion-->
   <body ng-app="reader">
     <ion-pane>
     <div class="bar bar-header">
@@ -31,15 +32,26 @@
       <img src="img/ionic.png" alt="">
       <h2>Lector Qr</h2>
     </div>
+    <!--Definimos un controlador para el login-->
     <div class="item" ng-controller="panelCtrl">
+    <!--Este formulario se muetsra se isLogged() en el 
+      controlador panel devuelve falso que indica 
+      que el usuario no ha iniciado sesion-->
       <form ng-show="!isLogged()">
+      <!--Se cogen los datos que ingresa el usuario y se guardan en 
+      el modelo user para ser enviados luego a la funcion login del 
+      panel controller-->
         <input type="text" ng-model="user.username" placeholder="username">
         <input type="password" ng-model="user.password" placeholder="password">
         <button class="button button-block button-positive"  ng-click="logIn(user.username, user.password)">Saludar</button>
       </form>
+      <!--Se muestra si el usuario se logeo es decir si el metodo isLogged() 
+      del panel Controller devuelve true-->
       <div ng-show="isLogged()">
       <blockquote>Usted Ha iniciado sesion correctamente <br> Ahora puede Leer Codigos QR</blockquote>
+      <!-- Se declara un controlador para el lector de codigos qr-->
       <div class="item"  ng-controller="readerCtrl">
+      <!--Se llama el metodo que lee el codigo-->
         <button class="button button-block button-positive" ng-click="leerCodigo()">Scan</button>
       </div>
     </div>
